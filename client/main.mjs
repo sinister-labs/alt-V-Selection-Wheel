@@ -3,6 +3,7 @@ import * as native from "natives";
 
 let wheelnavOpen = false;
 alt.onServer('wheelnav:open', (data) => {
+    if(wheelnavOpen != true){
     let view = new alt.WebView('http://resource/client/public/index.html');
     view.on('CEFLoaded', (e) => {
         alt.setTimeout(() => {
@@ -57,4 +58,5 @@ alt.onServer('wheelnav:open', (data) => {
             });
         }, 500)
     });
+    }
 });
